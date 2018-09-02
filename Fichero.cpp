@@ -21,16 +21,19 @@ void Fichero::leerArchivo() {
                 if(cadena[i] == 32 || cadena[i] == 62){ //32 es el ascii del espacio y 62 de >
                     cadena[i] = 10; // 10 es el ascii de \n
                 }
+                if(cadena[i] == 60 && cadena[i] == 47){ //60 es el ascii de < y 47 de /
+                    cadena[i-1] = 10; // 10 es el ascii de \n
+                }
             }
             for(int i = 0; i<128; i++) {
                 if (cadena[i] == 60) { //60 es el ascii de <
-                    int pos = i+1;
+                    int pos = i;
                     string s = "";
                     while (cadena[pos] != 10) {
                         s += cadena[pos];
                         pos++;
                     }
-                    //s += ">";
+                    s += ">";
                     i = pos;
                     diccionario.agregar(s);
                 }
