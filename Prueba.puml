@@ -1,0 +1,26 @@
+@startuml
+skinparam classAttributeIconSize 0
+class main {
+-fichero
+ +main()
+}
+
+skinparam classAttributeIconSize 0
+class Diccionario {
+-primero
+ +crear()
+ ~destruir()
+ +agregar(string)
+}
+
+skinparam classAttributeIconSize 0
+class Fichero {
+ -String nombArchivo
+ -diccionario
+  +Fichero(string)
+  +leerArchivo()
+}
+
+main <|-- Fichero
+Fichero <|-- Diccionario
+@enduml
