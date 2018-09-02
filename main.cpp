@@ -2,17 +2,18 @@
 #include <string>
 #include <fstream>
 #include <stdio.h>
-
 #include "Fichero.h"
+
+/*
+ * Compilar usando "g++ Diccionario.cpp Fichero.cpp main.cpp" (sin las comillas)
+ * y ejecutar el programa con "./a.out ejemploXML.xml" (sin las comillas)
+ */
 
 using namespace std;
 
-int main() {
-    /*string archivo = "";
-    for(int i=0; i<argv.length; i++){
-        archivo += argv[i];
-    }*/
-    Fichero fichero("ejemploXML");
+int main(int argc, char *argv[]) {
+    string archivo = argv[1];
+    Fichero fichero(archivo);
     fichero.leerArchivo();
 
     return 0;

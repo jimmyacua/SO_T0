@@ -31,7 +31,7 @@ void Diccionario::agregar(string elem) {
         Caja *anterior;
         bool existe = false;
         while(aux != NULL && !existe){
-            if(aux->elem == elem){
+            if(aux->elem.compare(elem) == 0){
                 existe = true;
                 aux->numApariciones++;
             } else{
@@ -78,7 +78,7 @@ void Diccionario::ordenar() {
     }
 
    Caja* aux = primero;
-    while(aux != NULL){
+    while(aux->sgt != NULL){
         cout << aux->elem << ": " << aux->numApariciones << endl;
         aux = aux->sgt;
     }
