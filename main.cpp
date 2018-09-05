@@ -12,11 +12,15 @@
 using namespace std;
 
 int main(int argc, char *argv[]) {
-    string archivo = argv[1];
-    //string archivo = "ejemploXML.xml";
-    Fichero fichero(archivo);
-    fichero.leerArchivo();
-
+    Fichero fichero;
+    if(argv[2] == "-t") {
+        cout << argv[1] << endl;
+        //fichero.opcional(nombre);
+    }
+    else {
+        string archivo = argv[1];
+        fichero.leerArchivo(archivo);
+    }
 
     return 0;
 }

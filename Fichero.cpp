@@ -5,13 +5,13 @@
 #include <cstring>
 #include "Fichero.h"
 
-Fichero::Fichero(string s) {
-    nArchivo = s;
-    diccionario.crear();
+Fichero::Fichero() {
 
 }
 
-void Fichero::leerArchivo() {
+void Fichero::leerArchivo(string s) {
+    diccionario.crear();
+    nArchivo = s;
     ifstream fichero;
     fichero.open(nArchivo.c_str());
     if(!fichero.fail()){
@@ -22,17 +22,25 @@ void Fichero::leerArchivo() {
             string::iterator aux;
             for(it; it != linea.end(); it++){
                 if(*it == '<'){
-                    aux = it;
+                    aux = it+1;
                     string palabra;
                     while(*aux != ' ' && *aux != '>') {
                         palabra += *aux;
                         aux++;
                     }
+                    it = aux;
                     diccionario.agregar(palabra);
                 }
             }
         }
         fichero.close();
     }
-   diccionario.ordenar();
+    diccionario.ordenar();
+    diccionario.destruir();
+}
+
+void Fichero::opcional(string nombre) {
+    ofstream fs(nombre+".xml");
+    fs << "hola" << endl;
+    fs.close();
 }

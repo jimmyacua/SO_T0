@@ -15,8 +15,9 @@ using namespace std;
 
 class Fichero {
 public:
-    Fichero(string s);
-    void leerArchivo();
+    Fichero();
+    void leerArchivo(string s);
+    void opcional(string);
 
 private:
     string nArchivo;
