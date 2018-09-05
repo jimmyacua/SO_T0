@@ -6,7 +6,9 @@
 
 /*
  * Compilar usando "g++ Diccionario.cpp Fichero.cpp main.cpp" (sin las comillas)
- * y ejecutar el programa con "./a.out ejemploXML.xml" (sin las comillas)
+ * y ejecutar el programa con "./a.out ejemploXML.xml" (sin las comillas).
+ * Para ejecutar el punto opcional debe hacerlo con el comando:
+ * "./a.out -t nombreDeArchivo.xml" (sin las comillas).
  */
 
 using namespace std;

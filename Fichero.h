@@ -16,9 +16,19 @@ using namespace std;
 
 class Fichero {
 public:
+
+    // constructor
     Fichero();
+
+    //Efecto: lee el archivo con nombre s y agrega las etiquetas al diccionario
+    //Requiere: s valido 
+    //Modifica: -
     void leerArchivo(string s);
-    void opcional(string);
+
+    //Efecto: crea un archivo xml nuevo a partir de otro, pero sin etiquetas
+    //Requiere: nombre valido
+    //Modifica: .
+    void opcional(string nombre);
 
 private:
     string nArchivo;

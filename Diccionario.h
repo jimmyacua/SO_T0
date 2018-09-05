@@ -34,25 +34,30 @@ class Diccionario {
     };
     
 public:
-        //Efecto:
-        //Requiere:
-        //Modifica:
+        //Efecto: inicializa el diccionario e inicializa numElem
+        //Requiere: -
+        //Modifica: -
         void crear();
-        //Efecto:
-        //Requiere:
-        //Modifica:
+
+        //Efecto: Destruye el diccionario devolviendo la memoria al sistema.
+        //Requiere: Diccionario inicializado
+        //Modifica: el Diccionario
         void destruir();
 
-        //Efecto:
-        //Requiere:
-        //Modifica:
+        //Efecto: Agrega un elemento al diccionario si no existe. Si existe se aumenta el contador de apariciones del elemento.
+        //Requiere: diccionario inicializado.
+        //Modifica: el diccionario
         void agregar(string);
 
+
+	//Efecto: ordena alfabeticamente los elementos del diccionario
+        //Requiere: diccionario inicializado y no vacio
+        //Modifica: el diccionario
         void ordenar();
 
     private:
         Caja *primero;
-        int numElem;
+	int numElem;
 };
 
 #endif //PRUEBA_DICCIONARIO_H
