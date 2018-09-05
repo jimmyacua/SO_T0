@@ -65,7 +65,6 @@ void Diccionario::ordenar() {
             cont2++;
         }
         if(min->elem.compare(p->elem) < 0){ //l.recuperar(min) < l.recuperar(p
-            //l.intercambiar(min, p);
             string inter = min->elem;
             int interc = min->numApariciones;
             min->elem = p->elem;

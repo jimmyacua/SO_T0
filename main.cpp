@@ -13,8 +13,10 @@ using namespace std;
 
 int main(int argc, char *argv[]) {
     string archivo = argv[1];
+    //string archivo = "ejemploXML.xml";
     Fichero fichero(archivo);
     fichero.leerArchivo();
+
 
     return 0;
 }
