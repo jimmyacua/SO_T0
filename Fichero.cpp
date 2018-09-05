@@ -1,8 +1,6 @@
 //
 // Created by jimmy on 21/08/18.
 //
-
-#include <cstring>
 #include "Fichero.h"
 
 Fichero::Fichero() {
@@ -40,7 +38,39 @@ void Fichero::leerArchivo(string s) {
 }
 
 void Fichero::opcional(string nombre) {
-    ofstream fs(nombre+".xml");
-    fs << "hola" << endl;
-    fs.close();
+    ofstream nuevo(nombre);
+    string archO;
+    cout << "Escriba el nombre del archivo xml original. (Con el .xml)" << endl;
+    cin >> archO;
+    ifstream fichero;
+    fichero.open(archO.c_str());
+    //--------------------------------------------------------------------
+    if(!fichero.fail()){
+        while(!fichero.eof()){
+            string linea = "";
+            getline(fichero, linea);
+            string::iterator it = linea.begin();
+            string::iterator aux;
+            for(it; it != linea.end(); it++){
+                //cout << linea << endl;
+                if(*it == '>'){
+                    aux = it+1;
+                    string palabra = "";
+                    while(*aux != '<' && *aux != '\n' && *aux != 0) {
+                        palabra += *aux;
+                        aux++;
+                    }
+
+                    //it = aux;
+                    nuevo << palabra << endl;
+                }
+            }
+            //cout << palabra << endl;
+            //nuevo << linea << endl;
+        }
+        fichero.close();
+    }
+    //-------------------------------------------------------------------------
+    nuevo.close();
+    cout << "Se ha generado el archivo " << nombre << endl;
 }

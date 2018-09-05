@@ -13,9 +13,10 @@ using namespace std;
 
 int main(int argc, char *argv[]) {
     Fichero fichero;
-    if(argv[2] == "-t") {
-        cout << argv[1] << endl;
-        //fichero.opcional(nombre);
+    string param = argv[1];
+    if(param.compare("-t") == 0) {
+        string nombre = argv[2];
+        fichero.opcional(nombre);
     }
     else {
         string archivo = argv[1];
